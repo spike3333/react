@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Cards from "./Cards";
 import "./pagination.css";
+import loader from "./loading_gif.gif";
 
 const Pagination = (props) => {
   const [data, setData] = useState(null);
@@ -25,7 +26,7 @@ const Pagination = (props) => {
         .then((response) => response.json())
         .then((data) => setData(data.users))
         .catch((error) => console.error("Error fetching data:", error));
-    }, 2000); // 3-second delay
+    }, 1500); // 3-second delay
 
     // Cleanup the timer
     return () => clearTimeout(timer);
@@ -62,7 +63,8 @@ const Pagination = (props) => {
         </>
       ) : (
         <div className="loading-container">
-          <p className="loading-text">Loading...</p>
+          {/* <p className="loading-text">Loading...</p> */}
+          <img className="loading_gif" src={loader}></img>
         </div>
       )}
     </div>

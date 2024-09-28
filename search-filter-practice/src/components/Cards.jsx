@@ -14,8 +14,10 @@ const Cards = (props) => {
 
         <div className="card-body">
           <h2 className="card-name">{user.firstName} {user.lastName}</h2>
-          <p className="card-address">{user.bank.birthdate}</p>
+          <p className="card-address">Age : {user.age}</p>
         </div>
+
+        <button className="button">View Profile</button>
       </div>
     ))}
   </div>
